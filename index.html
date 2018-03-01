@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Rock, Papers, Siccors</title>
+  </head>
+  <body>
+     <h1>Rock-Paper-Sciccors</h1>
+     <button id="rock" type="button" name="button">Rock</button>
+     <button id="paper" type="button" name="button">Paper</button>
+     <button id="scissor" type="button" name="button">Scissors</button>
+     <h2 id="winLose"></h2>
+     <h3 id="playerScore"></h3>
+     <h3 id="compScore"></h3>
+     <script type="text/javascript">
+       //what can the user see
+       //-user can see 3 button rock/paper/scissor
+       //-whether they won or lose
+       //what can the user do
+       //-user can press either button to play game
+       //what can the user expect
+       //user can exspect to either win or lose a game after pressing the button
+       //user press Rock
+       document.getElementById('rock').onclick= playerPlaysRock;
+       document.getElementById('paper').onclick= playerPlaysPaper;
+       document.getElementById('scissor').onclick= playerPlaysScissor;
+       var total = 0;
+       var playerScore = 0;
+       var compScore = 0;
+       //-r/p/s game runs
+       function playerPlaysRock(){
+         var rock = Math.random();
+         var score = 0;
+         if(rock < .33){
+           document.getElementById('winLose').innerHTML="You Won! Computer played scissors";
+           console.log("you win")
+           //player score increse
+           playerScore += total + 1;
+           document.getElementById('playerScore').innerHTML="Player 1 Score: "+playerScore;
+         }else if(rock >= .33 && rock <= .66) {
+           document.getElementById('winLose').innerHTML="You lose... Computer played paper (hehe)";
+           console.log("you lose")
+           //bot score increse
+           compScore += total + 1;
+           document.getElementById('compScore').innerHTML="Player 2 Score: "+compScore;
+         }else if(rock > .66){
+           document.getElementById('winLose').innerHTML="Draw Computer played Rock (hehe)";
+         }
+       }
+       function playerPlaysPaper(){
+         var paper = Math.random();
+         if(paper < .33){
+           document.getElementById('winLose').innerHTML="You Won! Computer playered rock";
+           console.log("you win")
+           //player score increse
+           playerScore += total + 1;
+           document.getElementById('playerScore').innerHTML="Player 1 Score: "+playerScore;
+         }else if(paper >= .33 && paper <= .66) {
+           document.getElementById('winLose').innerHTML="You lose... Computer playered scissors (hehe)";
+           console.log("you lose")
+           //bot score increse
+           compScore += total + 1;
+           document.getElementById('compScore').innerHTML="Player 2 Score: "+compScore;
+         }else if(paper > .66){
+           document.getElementById('winLose').innerHTML="Draw Computer played Paper (hehe)";
+         }
+       }
+       function playerPlaysScissor(){
+         var scissors = Math.random();
+         if(scissors < .33){
+           document.getElementById('winLose').innerHTML="You Won! Computer playered paper";
+           console.log("you win")
+           //player score increse
+           playerScore += total + 1;
+           document.getElementById('playerScore').innerHTML="Player 1 Score: "+playerScore;
+         }else if(scissors >= .33 && scissors <= .66) {
+           document.getElementById('winLose').innerHTML="You lose... Computer playered rock (hehe)";
+           console.log("you lose")
+           //bot score increse
+           compScore += total + 1;
+           document.getElementById('compScore').innerHTML="Player 2 Score: "+compScore;
+         }else if(scissor > .66){
+           document.getElementById('winLose').innerHTML="Draw Computer played Scissor (hehe)";
+         }
+       }
+       //-print result of whether win or lose
+       //user press Paper
+       //-r/p/s game runs
+       //-print result of whether win or lose
+       //user press Scissors
+       //-r/p/s game runs
+       //-print result of whether win or lose
+     </script>
+  </body>
+</html>
